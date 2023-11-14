@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git(url: 'https://github.com/Milahn-Henri-Louis-Irwin-ITBSA/fuel-service', branch: 'main')
+                git(url: 'https://github.com/Milahn-Henri-Louis-Irwin-ITBSA/hotel-service', branch: 'main')
             }
         }
 
@@ -33,13 +33,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Create the directory '/root/microservices/firebase-admin-service' if it doesn't exist
-                sh 'mkdir -p /root/microservices/fuel-service'
+                sh 'mkdir -p /root/microservices/hotel-service'
 
                 // Move the 'dist' directory to '/root/microservices/firebase-admin-service'
-                sh 'mv dist /root/microservices/fuel-service'
+                sh 'mv dist /root/microservices/hotel-service'
 
                 // Move the 'node_modules' directory to '/root/microservices/firebase-admin-service'
-                sh 'mv node_modules /root/microservices/fuel-service'
+                sh 'mv node_modules /root/microservices/hotel-service'
             }
         }
     }
