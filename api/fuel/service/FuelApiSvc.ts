@@ -8,7 +8,7 @@ export default class FuelApi {
   ): Promise<any> {
     try {
       const response = await axios.post(
-        process.env.HOTEL_API_URL,
+        process.env.FUEL_API_URL,
         {
           includedTypes: ['gas_station'],
           maxResultCount: 10,
@@ -25,7 +25,7 @@ export default class FuelApi {
         {
           headers: {
             'Content-Type': 'application/json',
-            'X-Goog-Api-Key': process.env.HOTEL_API_KEY,
+            'X-Goog-Api-Key': process.env.FUEL_API_KEY,
             'X-Goog-FieldMask':
               'places.location,places.formattedAddress,places.types',
           },
