@@ -14,7 +14,8 @@ export class FuelController {
   @Post('/nearby')
   public async getNearbyHotels(
     @HeaderParam('Authorization') authorization: string,
-    @BodyParam('coordinates') coordinates: any,
+    @BodyParam('coordinates')
+    coordinates: { latitude: number; longitude: number },
     @BodyParam('radius') radius: number
   ) {
     try {
@@ -65,7 +66,8 @@ export class FuelController {
 
       return Promise.resolve({
         status: 200,
-        hotels: data,
+        service: 'tripwiz-fuel',
+        places: data?.places ?? [],
       });
     } catch (error) {
       return Promise.resolve({

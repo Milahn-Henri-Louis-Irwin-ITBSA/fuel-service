@@ -52,7 +52,7 @@ expressApp.use(bodyParser.json());
 expressApp.use('/v1/api', limiter);
 expressApp.get('/', (req, res) => {
   res.status(200).json({
-    service: 'hotel',
+    service: 'fuel',
     status: 'ok',
   });
 });
