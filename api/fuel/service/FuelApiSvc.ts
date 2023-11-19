@@ -11,7 +11,7 @@ export default class FuelApi {
         process.env.FUEL_API_URL,
         {
           includedTypes: ['gas_station'],
-          maxResultCount: 10,
+          maxResultCount: 20,
           locationRestriction: {
             circle: {
               center: {
